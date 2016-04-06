@@ -1,2 +1,2 @@
 # financekeeper
-Finance keeper android native app
+Finance keeper android native application
