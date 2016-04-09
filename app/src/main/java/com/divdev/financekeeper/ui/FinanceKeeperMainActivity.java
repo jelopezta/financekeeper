@@ -1,4 +1,4 @@
-package com.divdev.financekeeper;
+package com.divdev.financekeeper.ui;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -12,6 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.divdev.financekeeper.R;
 
 public class FinanceKeeperMainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
