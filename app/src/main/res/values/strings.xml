@@ -9,5 +9,6 @@
     <string name="remove_finance_node_label">Remove Accounts</string>
     <string name="settings_label">Settings</string>
     <string name="add_tag_label">Add tag</string>
+    <string name="view_reports_label">View reports</string>
 
 </resources>

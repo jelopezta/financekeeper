@@ -4,20 +4,29 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/add_finance_node_menu_item"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@android:drawable/ic_menu_add"
             android:title="@string/add_finance_node_label" />
         <item
             android:id="@+id/remove_finance_node_menu_item"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@android:drawable/ic_menu_delete"
             android:title="@string/remove_finance_node_label" />
         <item
             android:id="@+id/add_tag_menu_item"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@android:drawable/ic_menu_directions"
             android:title="@string/add_tag_label" />
         <item
             android:id="@+id/settings_menu_item"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@android:drawable/ic_menu_preferences"
             android:title="@string/settings_label" />
     </group>
+
+    <item android:title="Comming soon">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@android:drawable/ic_menu_view"
+                android:title="@string/view_reports_label" />
+        </menu>
+    </item>
 
 </menu>
