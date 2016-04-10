@@ -82,15 +82,15 @@ public class FinanceKeeperMainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.add_acount_menu_item) {
+        if (id == R.id.add_finance_node_menu_item) {
             // Handle the camera action
-        } else if (id == R.id.remove_accounts_menu_item) {
+        } else if (id == R.id.remove_finance_node_menu_item) {
+
+        } else if(id==R.id.add_tag_menu_item) {
 
         } else if (id == R.id.settings_menu_item) {
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if(id == R.id.nav_view_reports) {
 
         }
 

@@ -23,7 +23,7 @@
     <item android:title="Comming soon">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_view_reports"
                 android:icon="@android:drawable/ic_menu_view"
                 android:title="@string/view_reports_label" />
         </menu>

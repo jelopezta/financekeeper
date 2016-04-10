@@ -1,14 +1,20 @@
 <resources>
     <string name="app_name">Finance Keeper</string>
-    
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <!-- Main menu options -->
     <string name="action_settings">Settings</string>
     <string name="add_finance_node_label">Add Finance Node</string>
     <string name="remove_finance_node_label">Remove Finance Node</string>
     <string name="settings_label">Settings</string>
     <string name="add_tag_label">Add tag</string>
     <string name="view_reports_label">View reports</string>
+
+    <!-- Finance Node Operation Types names -->
+    <string name="operation_type_add_balance">Add Balance</string>
+    <string name="operation_type_subtract_balance">Subtract Balance</string>
+    <string name="operation_type_moved_balance_to">Moved Balance To</string>
+    <string name="operation_type_moved_balance_from">Moved Balance From</string>
 
 </resources>
