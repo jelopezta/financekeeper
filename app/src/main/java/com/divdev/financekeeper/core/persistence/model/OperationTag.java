@@ -3,7 +3,7 @@ package com.divdev.financekeeper.core.persistence.model;
 /**
  * @author jlopez
  */
-public class FinanceNodeOperationTag {
+public class OperationTag {
     /**
      * Name of the tag.
      */

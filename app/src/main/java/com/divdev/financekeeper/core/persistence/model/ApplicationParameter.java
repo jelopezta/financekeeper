@@ -27,11 +27,11 @@ public class ApplicationParameter {
     /**
      * Max number of Finance Nodes.
      */
-    private short maxNumberOfFinanceNodes;
+    private final short maxNumberOfFinanceNodes = 99;
 
     /**
      * Max number of Tags.
      */
-    private short maxNumberOfTags;
+    private final short maxNumberOfTags = 99;
 
 }

@@ -8,10 +8,16 @@ import java.util.Date;
  * @author jlopez
  */
 public class FinanceNodeOperation {
+
+    /**
+     * Unique identifier for the operation.
+     */
+    private String uuid;
+
     /**
      * Type of operation done on the Finance Node.
      */
-    private FinanceNodeOperationType type;
+    private OperationType type;
 
     /**
      * Date of the operation.
@@ -36,10 +42,20 @@ public class FinanceNodeOperation {
     /**
      * Tag associated with this operation.
      */
-    private FinanceNodeOperationTag tag;
+    private OperationTag tag;
 
     /**
      * Additional comments associated with this operation.
      */
     private String comments;
+
+    /**
+     * Latitude coordinate of where the operation took place.
+     */
+    private double locationLatitude;
+
+    /**
+     * Longitude coordinate of where the operation took place.
+     */
+    private double locationLongitude;
 }
