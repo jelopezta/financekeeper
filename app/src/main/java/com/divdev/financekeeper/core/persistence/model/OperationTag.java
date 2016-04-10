@@ -1,6 +1,8 @@
 package com.divdev.financekeeper.core.persistence.model;
 
 /**
+ * Tags for the FinanceNodeOperation records.
+ *
  * @author jlopez
  */
 public class OperationTag {

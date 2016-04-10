@@ -5,7 +5,7 @@ import android.content.Context;
 import com.divdev.financekeeper.R;
 
 /**
- * Accepted actions for Finance Nodes.
+ * Accepted types for FinanceNodes Operations.
  *
  * @author jlopez
  */

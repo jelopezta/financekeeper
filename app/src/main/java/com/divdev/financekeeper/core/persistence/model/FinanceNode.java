@@ -3,7 +3,7 @@ package com.divdev.financekeeper.core.persistence.model;
 import java.math.BigDecimal;
 
 /**
- * Node representing a segmented balance. May have a number of child Finance Nodes
+ * Node representing a segmented balance. May have a number of child Finance Nodes.
  *
  * @author jlopez
  */
@@ -28,6 +28,11 @@ public class FinanceNode {
      * Description of the node.
      */
     private String description;
+
+    /**
+     * The parent of this FinanceNode. May be null for absolute parents.
+     */
+    private FinanceNode parent;
 
     /**
      * Balance of the node.

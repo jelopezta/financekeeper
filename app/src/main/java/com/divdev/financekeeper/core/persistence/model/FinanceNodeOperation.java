@@ -3,7 +3,7 @@ package com.divdev.financekeeper.core.persistence.model;
 import java.util.Date;
 
 /**
- * Log of an operation done on a Finance Node
+ * Operation done on a Finance Node
  *
  * @author jlopez
  */
