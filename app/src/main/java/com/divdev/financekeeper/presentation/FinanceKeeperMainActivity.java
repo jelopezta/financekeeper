@@ -1,4 +1,4 @@
-package com.divdev.financekeeper.ui;
+package com.divdev.financekeeper.presentation;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;

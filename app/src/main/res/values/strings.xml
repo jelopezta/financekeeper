@@ -8,5 +8,6 @@
     <string name="add_account_label">Add Account</string>
     <string name="remove_accounts_label">Remove Accounts</string>
     <string name="settings_label">Settings</string>
+    <string name="add_tag_label">add_tag_label</string>
 
 </resources>
