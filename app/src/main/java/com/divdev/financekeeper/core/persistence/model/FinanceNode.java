@@ -24,6 +24,7 @@ public class FinanceNode {
      */
     private String name;
 
+
     /**
      * Description of the node.
      */
@@ -38,5 +39,54 @@ public class FinanceNode {
      * Balance of the node.
      */
     private BigDecimal balance;
+
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getCompleteCode() {
+        return completeCode;
+    }
+
+    public void setCompleteCode(String completeCode) {
+        this.completeCode = completeCode;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public FinanceNode getParent() {
+        return parent;
+    }
+
+    public void setParent(FinanceNode parent) {
+        this.parent = parent;
+    }
+
+    public BigDecimal getBalance() {
+        return balance;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
+    }
 
 }

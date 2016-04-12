@@ -16,5 +16,6 @@
     <string name="operation_type_subtract_balance">Subtract Balance</string>
     <string name="operation_type_moved_balance_to">Moved Balance To</string>
     <string name="operation_type_moved_balance_from">Moved Balance From</string>
+    <string name="totalBalanceLabel">Total Balance</string>
 
 </resources>

@@ -12,17 +12,44 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".presentation.FinanceKeeperMainActivity">
 
-    <FrameLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true">
+        android:layout_height="match_parent">
 
-        <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:id="@+id/financenode_main_list"
             android:layout_gravity="center"
-            tools:listitem="@layout/finance_node_main_list_item" />
-    </FrameLayout>
+            tools:listitem="@layout/finance_node_main_list_item"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="90" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:measureWithLargestChild="false">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/totalBalanceLabel"
+                android:textStyle="bold"
+                android:id="@+id/totalBalanceLabel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold"
+                android:text="000.000.000,00"
+                android:id="@+id/totalBalance" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 </RelativeLayout>

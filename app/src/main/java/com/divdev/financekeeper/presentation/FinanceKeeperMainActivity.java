@@ -3,6 +3,8 @@ package com.divdev.financekeeper.presentation;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +16,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.divdev.financekeeper.R;
+import com.divdev.financekeeper.core.persistence.adapters.FinanceNodeMainListAdapter;
+import com.divdev.financekeeper.core.persistence.model.FinanceNode;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FinanceKeeperMainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -36,13 +44,24 @@ public class FinanceKeeperMainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-            this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        // Initialize recycler view
+        RecyclerView recyclerViewList = (RecyclerView) findViewById(R.id.financenode_main_list);
+        recyclerViewList.setLayoutManager(new LinearLayoutManager(this));
+        List<FinanceNode> listaNodos = new ArrayList<>();
+        ListFiller.llenarListaNodos(listaNodos);
+
+        recyclerViewList.setAdapter(new FinanceNodeMainListAdapter(getBaseContext(), listaNodos));
+        Snackbar.make(recyclerViewList, "Adapter set", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -55,29 +74,6 @@ public class FinanceKeeperMainActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.finance_keeper_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
@@ -86,11 +82,11 @@ public class FinanceKeeperMainActivity extends AppCompatActivity
             // Handle the camera action
         } else if (id == R.id.remove_finance_node_menu_item) {
 
-        } else if(id==R.id.add_tag_menu_item) {
+        } else if (id == R.id.add_tag_menu_item) {
 
         } else if (id == R.id.settings_menu_item) {
 
-        } else if(id == R.id.nav_view_reports) {
+        } else if (id == R.id.nav_view_reports) {
 
         }
 

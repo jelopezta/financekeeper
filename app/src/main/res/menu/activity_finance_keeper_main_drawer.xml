@@ -20,7 +20,7 @@
             android:title="@string/settings_label" />
     </group>
 
-    <item android:title="Comming soon">
+    <item android:title="Coming soon">
         <menu>
             <item
                 android:id="@+id/nav_view_reports"
