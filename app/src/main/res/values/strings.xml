@@ -8,7 +8,7 @@
     <string name="add_finance_node_label">Add Finance Node</string>
     <string name="remove_finance_node_label">Remove Finance Node</string>
     <string name="settings_label">Settings</string>
-    <string name="add_tag_label">Add tag</string>
+    <string name="manage_tags_label">Manage Tags</string>
     <string name="view_reports_label">View reports</string>
 
     <!-- Finance Node Operation Types names -->
