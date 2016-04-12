@@ -58,7 +58,6 @@ public class FinanceKeeperMainActivity extends AppCompatActivity
         ListFiller.llenarListaNodos(listaNodos);
 
         recyclerViewList.setAdapter(new FinanceNodeMainListAdapter(getBaseContext(), listaNodos));
-        Snackbar.make(recyclerViewList, "Adapter set", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
     }
 
 

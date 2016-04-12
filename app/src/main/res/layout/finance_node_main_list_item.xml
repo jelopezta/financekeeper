@@ -1,46 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingRight="0dp"
+    android:paddingLeft="@dimen/financenode_listitem_general_padding"
+    android:paddingTop="@dimen/financenode_listitem_general_padding"
+    android:paddingBottom="@dimen/financenode_listitem_general_padding">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:layout_weight="75"
-        android:padding="@dimen/financenode_listitem_name_padding">
+    <TextView
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceListItem"
+        android:text="Node Name"
+        android:id="@+id/main_list_item_name" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Node Name"
-            android:id="@+id/main_list_item_name" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical|right"
-        android:layout_weight="25"
-        android:padding="@dimen/financenode_listitem_balance_padding"
-        android:layout_gravity="center_vertical|right"
-        android:textAlignment="gravity"
-        android:showDividers="middle|beginning|end">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Node Balance"
-            android:textStyle="bold"
-            android:textAlignment="gravity"
-            android:id="@+id/main_list_item_balance"
-            android:layout_gravity="right|center_horizontal" />
-    </LinearLayout>
+    <TextView
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceListItem"
+        android:text="Node Balance"
+        android:textStyle="bold"
+        android:gravity="right"
+        android:id="@+id/main_list_item_balance" />
 
 
 </LinearLayout>
