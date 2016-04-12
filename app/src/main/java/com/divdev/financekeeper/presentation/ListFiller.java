@@ -51,7 +51,7 @@ public class ListFiller {
         nodo8.setBalance(new BigDecimal(1_000_500_000));
 
         FinanceNode nodo9 = new FinanceNode();
-        nodo9.setName("    Patito90000000000000");
+        nodo9.setName("    Patito90000000000000000000");
         nodo9.setDescription("Description of node patito 9");
         nodo9.setBalance(new BigDecimal(500_000));
 

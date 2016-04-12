@@ -12,7 +12,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceListItem"
         android:text="Node Name"
-        android:id="@+id/main_list_item_name" />
+        android:id="@+id/main_list_item_name"
+        android:maxLines="1"
+        android:scrollHorizontally="true"
+        android:ellipsize="end" />
 
     <TextView
         android:layout_width="110dp"
@@ -21,7 +24,8 @@
         android:text="Node Balance"
         android:textStyle="bold"
         android:gravity="right"
-        android:id="@+id/main_list_item_balance" />
+        android:id="@+id/main_list_item_balance"
+        android:ellipsize="end" />
 
 
 </LinearLayout>
