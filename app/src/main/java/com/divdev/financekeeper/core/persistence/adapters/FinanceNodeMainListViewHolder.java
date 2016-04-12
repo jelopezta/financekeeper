@@ -11,11 +11,13 @@ import com.divdev.financekeeper.R;
  */
 public class FinanceNodeMainListViewHolder extends RecyclerView.ViewHolder {
     protected TextView financeNodeName;
+    protected TextView financeNodeDescription;
     protected TextView financeNodeBalance;
 
     public FinanceNodeMainListViewHolder(View itemView) {
         super(itemView);
         financeNodeName = (TextView) itemView.findViewById(R.id.main_list_item_name);
+        financeNodeDescription = (TextView) itemView.findViewById(R.id.main_list_item_description);
         financeNodeBalance = (TextView) itemView.findViewById(R.id.main_list_item_balance);
     }
 }

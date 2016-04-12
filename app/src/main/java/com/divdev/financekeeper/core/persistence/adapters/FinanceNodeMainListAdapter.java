@@ -38,6 +38,7 @@ public class FinanceNodeMainListAdapter extends RecyclerView.Adapter<FinanceNode
         FinanceNode feedItem = feedItemList.get(position);
         //Setting list item values
         holder.financeNodeName.setText(feedItem.getName());
+        holder.financeNodeDescription.setText(feedItem.getDescription());
         holder.financeNodeBalance.setText(feedItem.getBalance().toPlainString());
     }
 
