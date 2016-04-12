@@ -31,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="10"
+            android:paddingLeft="@dimen/totalFinanceNodeBalancePaddingLeft"
             android:measureWithLargestChild="false">
 
             <TextView
