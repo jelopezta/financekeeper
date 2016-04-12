@@ -9,6 +9,5 @@
     <dimen name="financenode_listitem_name_padding">16dp</dimen>
     <dimen name="financenode_listitem_balance_padding">16dp</dimen>
     <dimen name="totalFinanceNodeBalancePaddingLeft">12dp</dimen>
-    <dimen name="financenode_listitem_general_padding">6dp</dimen>
-
+    <dimen name="financenode_listitem_general_padding">10dp</dimen>
 </resources>
