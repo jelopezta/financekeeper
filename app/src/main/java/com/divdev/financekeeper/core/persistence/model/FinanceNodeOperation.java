@@ -12,7 +12,7 @@ public class FinanceNodeOperation {
     /**
      * Unique identifier for the operation.
      */
-    private String uuid;
+    private String id;
 
     /**
      * Type of operation done on the Finance Node.

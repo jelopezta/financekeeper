@@ -7,6 +7,7 @@ import android.widget.TextView;
 import com.divdev.financekeeper.R;
 
 /**
+ * View holder for FinanceNodeMainListAdapter
  * @author jlopez
  */
 public class FinanceNodeMainListViewHolder extends RecyclerView.ViewHolder {

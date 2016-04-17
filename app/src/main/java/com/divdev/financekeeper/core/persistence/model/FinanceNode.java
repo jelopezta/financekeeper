@@ -12,7 +12,7 @@ public class FinanceNode {
     /**
      * Finance Node code.
      */
-    private int code;
+    private int id;
 
     /**
      * Finance Node complete code. code of the node normalized to 2 characters with the complete code of his parent.
@@ -41,12 +41,12 @@ public class FinanceNode {
     private BigDecimal balance;
 
 
-    public int getCode() {
-        return code;
+    public int getId() {
+        return id;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getCompleteCode() {
