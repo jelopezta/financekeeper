@@ -5,8 +5,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.divdev.financekeeper.core.persistence.sqlite.sqlitemodel.FinanceNodeSqliteImpl;
+import com.divdev.financekeeper.core.persistence.sqlite.sqlitemodel.OperationTagSqliteImple;
 
 /**
+ * SQLite Helper
+ *
  * @author jlopez
  */
 public class FinanceKeeperDbHelper extends SQLiteOpenHelper {
@@ -33,7 +36,10 @@ public class FinanceKeeperDbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // TODO
         db.execSQL(FinanceNodeSqliteImpl.CREATE_TABLE);
+        db.execSQL(OperationTagSqliteImple.CREATE_TABLE);
+
     }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Currently unnecesary

@@ -9,38 +9,38 @@ public class OperationTag {
     /**
      * Name of the tag.
      */
-    private String tagName;
+    private String id;
 
     /**
      * Description of tag use.
      */
-    private String tagDescription;
+    private String description;
 
     /**
-     * @return tagName
+     * @return id
      */
-    public String getTagName() {
-        return tagName;
+    public String getId() {
+        return id;
     }
 
     /**
-     * @param tagName the tag name to set
+     * @param id the tag name to set
      */
-    public void setTagName(String tagName) {
-        this.tagName = tagName;
+    public void setId(String id) {
+        this.id = id;
     }
 
     /**
-     * @return tagDescription
+     * @return description
      */
-    public String getTagDescription() {
-        return tagDescription;
+    public String getDescription() {
+        return description;
     }
 
     /**
-     * @param tagDescription the tag description to set
+     * @param description the tag description to set
      */
-    public void setTagDescription(String tagDescription) {
-        this.tagDescription = tagDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
