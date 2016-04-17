@@ -42,10 +42,10 @@ public class FinanceKeeperMainActivity extends AppCompatActivity
         });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+        ActionBarDrawerToggle drawerListener = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
+        drawer.addDrawerListener(drawerListener);
+        drawerListener.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -58,7 +58,6 @@ public class FinanceKeeperMainActivity extends AppCompatActivity
 
         recyclerViewList.setAdapter(new FinanceNodeMainListAdapter(getBaseContext(), listaNodos));
     }
-
 
 
     @Override
