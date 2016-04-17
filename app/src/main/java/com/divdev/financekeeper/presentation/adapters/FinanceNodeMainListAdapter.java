@@ -1,4 +1,4 @@
-package com.divdev.financekeeper.core.persistence.adapters;
+package com.divdev.financekeeper.presentation.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import com.divdev.financekeeper.R;
 import com.divdev.financekeeper.core.persistence.model.FinanceNode;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -28,7 +27,7 @@ public class FinanceNodeMainListAdapter extends RecyclerView.Adapter<FinanceNode
 
     @Override
     public FinanceNodeMainListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.finance_node_main_list_item, null);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_finance_node_main_list, null);
         FinanceNodeMainListViewHolder viewHolder = new FinanceNodeMainListViewHolder(view);
         return viewHolder;
     }

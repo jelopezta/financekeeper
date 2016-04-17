@@ -1,4 +1,4 @@
-package com.divdev.financekeeper.presentation;
+package com.divdev.financekeeper.presentation.mocks;
 
 import com.divdev.financekeeper.core.persistence.model.FinanceNode;
 

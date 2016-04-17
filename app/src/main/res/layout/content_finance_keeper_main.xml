@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".presentation.FinanceKeeperMainActivity">
+    tools:context=".presentation.activities.FinanceKeeperMainActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -22,7 +22,7 @@
             android:layout_height="0dp"
             android:id="@+id/financenode_main_list"
             android:layout_gravity="center"
-            tools:listitem="@layout/finance_node_main_list_item"
+            tools:listitem="@layout/list_item_finance_node_main_list"
             android:layout_marginBottom="16dp"
             android:layout_weight="90" />
 
@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="10"
-            android:paddingLeft="@dimen/totalFinanceNodeBalancePaddingLeft"
+            android:paddingLeft="@dimen/financenode_totalbalance_padding_left"
             android:measureWithLargestChild="false">
 
             <TextView

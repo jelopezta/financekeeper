@@ -1,4 +1,4 @@
-package com.divdev.financekeeper.core.persistence.sqlite.sqliteimpl;
+package com.divdev.financekeeper.core.persistence.sqlite;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

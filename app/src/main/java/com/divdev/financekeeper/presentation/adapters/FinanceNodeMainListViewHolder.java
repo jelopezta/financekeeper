@@ -1,4 +1,4 @@
-package com.divdev.financekeeper.core.persistence.adapters;
+package com.divdev.financekeeper.presentation.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
