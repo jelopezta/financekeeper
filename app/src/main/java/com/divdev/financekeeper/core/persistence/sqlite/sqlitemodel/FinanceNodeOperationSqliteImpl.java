@@ -18,4 +18,27 @@ public class FinanceNodeOperationSqliteImpl implements BaseColumns {
     public static final String COLUMN_TAG = "FNOTAG";
     public static final String COLUMN_LOCATION_LATITUDE = "FNOLOCLATITUDE";
     public static final String COLUMN_LOCATION_LONGITUDE = "FNOLOCLONGITUDE";
+
+    public static final String CREATE_TABLE;
+
+    static {
+        StringBuilder createTableBuilder = new StringBuilder();
+        createTableBuilder.append("CREATE TABLE ").append(TABLE_NAME).append(" (");
+        createTableBuilder.append(COLUMN_ID).append(" NUMERIC PRIMARY KEY, ");
+        createTableBuilder.append(COLUMN_OPERATION_TYPE).append(" TEXT, ");
+        createTableBuilder.append(COLUMN_OPERATION_DATE).append(" DATETIME, ");
+        createTableBuilder.append(COLUMN_SYSTEM_DATE).append(" DATETIME, ");
+        createTableBuilder.append(COLUMN_MAIN_NODE).append(" NUMERIC, ");
+        createTableBuilder.append(COLUMN_ASSOCIATED_NODE).append(" NUMERIC, ");
+        createTableBuilder.append(COLUMN_TAG).append(" TEXT, ");
+        createTableBuilder.append(COLUMN_LOCATION_LATITUDE).append(" NUMBER, ");
+        createTableBuilder.append(COLUMN_LOCATION_LONGITUDE).append(" NUMBER");
+
+        createTableBuilder.append(",FOREIGN KEY(").append(COLUMN_TAG).append(") REFERENCES ");
+        createTableBuilder.append(OperationTagSqliteImpl.TABLE_NAME).
+                append("(").append(OperationTagSqliteImpl.COLUMN_ID).append(") ");
+
+        createTableBuilder.append(")");
+        CREATE_TABLE = createTableBuilder.toString();
+    }
 }

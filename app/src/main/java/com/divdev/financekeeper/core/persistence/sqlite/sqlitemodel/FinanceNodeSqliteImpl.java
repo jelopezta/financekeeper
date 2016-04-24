@@ -27,8 +27,10 @@ public final class FinanceNodeSqliteImpl implements BaseColumns {
         createTableBuilder.append(COLUMN_DESCRIPTION).append(" TEXT, ");
         createTableBuilder.append(COLUMN_PARENT).append(" NUMERIC, ");
         createTableBuilder.append(COLUMN_BALANCE).append(" NUMERIC");
+
         createTableBuilder.append(",FOREIGN KEY(").append(COLUMN_PARENT).append(") REFERENCES ");
-        createTableBuilder.append(TABLE_NAME).append("(").append(COLUMN_ID).append(") ");
+        createTableBuilder.append(TABLE_NAME)
+                .append("(").append(COLUMN_ID).append(") ");
         createTableBuilder.append(")");
         CREATE_TABLE = createTableBuilder.toString();
     }
