@@ -1,6 +1,11 @@
 package com.divdev.financekeeper.core.persistence.model;
 
+import android.content.Context;
+
+import com.divdev.financekeeper.core.persistence.sqlite.sqlitemodel.FinanceNodeSqliteImpl;
+
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * Node representing a segmented balance. May have a number of child Finance Nodes.
@@ -89,4 +94,13 @@ public class FinanceNode {
         this.balance = balance;
     }
 
+    /**
+     * Returns the full list of Finance Nodes.
+     *
+     * @param applicationContext the context of the application
+     * @return the list of finance nodes
+     */
+    public static List<FinanceNode> getAllFinanceNodes(Context applicationContext) {
+        return FinanceNodeSqliteImpl.getAllFinanceNodes(applicationContext);
+    }
 }

@@ -7,8 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
 
 import com.divdev.financekeeper.R;
+import com.divdev.financekeeper.core.persistence.model.FinanceNode;
 import com.divdev.financekeeper.core.persistence.sqlite.FinanceKeeperDbHelper;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.prefs.Preferences;
 
 public class InitialSplashActivity extends AppCompatActivity {
@@ -22,11 +25,7 @@ public class InitialSplashActivity extends AppCompatActivity {
         Thread timerThread = new Thread() {
             public void run() {
                 try {
-                    FinanceKeeperDbHelper helper = new FinanceKeeperDbHelper(getApplicationContext());
-                    SQLiteDatabase readableDatabase = helper.getReadableDatabase();
-                    if(readableDatabase != null) {
-                        System.out.println("database ready");// TODO
-                    }
+                   // List<FinanceNode> financeNodeList = FinanceNode.getAllFinanceNodes(getApplicationContext());
                     sleep(3000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
