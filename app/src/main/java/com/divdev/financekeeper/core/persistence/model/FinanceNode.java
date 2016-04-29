@@ -2,7 +2,7 @@ package com.divdev.financekeeper.core.persistence.model;
 
 import android.content.Context;
 
-import com.divdev.financekeeper.core.persistence.sqlite.FinanceNodeSqliteImpl;
+import com.divdev.financekeeper.core.persistence.sqlite.sqlitedao.FinanceNodeSqliteDao;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -114,6 +114,6 @@ public class FinanceNode {
      * @return the list of finance nodes
      */
     public static List<FinanceNode> getAllFinanceNodes(Context applicationContext) {
-        return FinanceNodeSqliteImpl.getAllFinanceNodes(applicationContext);
+        return FinanceNodeSqliteDao.getAllFinanceNodes(applicationContext);
     }
 }

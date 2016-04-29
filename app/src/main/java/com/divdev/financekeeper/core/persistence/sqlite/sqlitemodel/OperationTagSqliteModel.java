@@ -1,4 +1,4 @@
-package com.divdev.financekeeper.core.persistence.sqlite;
+package com.divdev.financekeeper.core.persistence.sqlite.sqlitemodel;
 
 import android.provider.BaseColumns;
 
@@ -7,7 +7,7 @@ import android.provider.BaseColumns;
  *
  * @author jlopez
  */
-public class OperationTagSqliteImpl implements BaseColumns {
+public class OperationTagSqliteModel implements BaseColumns {
     public static final String TABLE_NAME = "TAG";
     public static final String COLUMN_ID = "TAGID";
     public static final String COLUMN_DESCRIPTION = "TAGDESCRIPTION";

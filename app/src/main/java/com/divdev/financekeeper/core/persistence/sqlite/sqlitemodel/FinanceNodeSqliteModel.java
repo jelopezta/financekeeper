@@ -1,4 +1,4 @@
-package com.divdev.financekeeper.core.persistence.sqlite;
+package com.divdev.financekeeper.core.persistence.sqlite.sqlitemodel;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
 
 import com.divdev.financekeeper.core.persistence.model.FinanceNode;
+import com.divdev.financekeeper.core.persistence.sqlite.FinanceKeeperDbHelper;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ import java.util.List;
  *
  * @author jlopez
  */
-public final class FinanceNodeSqliteImpl implements BaseColumns {
+public final class FinanceNodeSqliteModel implements BaseColumns {
     public static final String TABLE_NAME = "FINANCE_NODE";
     public static final String COLUMN_ID = "FNID";
     public static final String COLUMN_COMPLETE_CODE = "FNCOMPLETECODE";
@@ -63,68 +64,5 @@ public final class FinanceNodeSqliteImpl implements BaseColumns {
         insertWalletBuilder.append(100_000d).append(")");
         INSERT_WALLET = insertWalletBuilder.toString();
 
-    }
-
-    /**
-     * Obtains the full list of finance nodes in the database.
-     *
-     * @param applicationContext context of the application
-     * @return the list of finance nodes in the database
-     */
-    public static List<FinanceNode> getAllFinanceNodes(Context applicationContext) {
-        List<FinanceNode> nodes = new ArrayList<FinanceNode>();
-
-        FinanceKeeperDbHelper helper = new FinanceKeeperDbHelper(applicationContext);
-        SQLiteDatabase readableDatabase = null;
-        try {
-            readableDatabase = helper.getReadableDatabase();
-
-            String[] cursorSelectColumns = new String[]{
-                    COLUMN_ID,
-                    COLUMN_COMPLETE_CODE,
-                    COLUMN_NAME,
-                    COLUMN_DESCRIPTION,
-                    COLUMN_PARENT,
-                    COLUMN_BALANCE
-            };
-            String cursorOrderBy = COLUMN_COMPLETE_CODE;
-            // perform query
-            Cursor cursor = readableDatabase.query(TABLE_NAME, cursorSelectColumns,
-                    null, null, null, null, cursorOrderBy); // get all rows
-
-            if (cursor != null) {
-                // add items to the list
-                for (cursor.moveToFirst(); cursor.isAfterLast() == false; cursor.moveToNext()) {
-                    nodes.add(getFinanceNodeFromCursor(cursor));
-                }
-
-                // close the cursor
-                cursor.close();
-            }
-        } finally {
-            // close the database connection
-            if (readableDatabase != null) {
-                readableDatabase.close();
-            }
-        }
-        return nodes;
-    }
-
-    /**
-     * Builds a FinanceNode object from the information on the current position of the cursor.
-     *
-     * @param cursor the cursor with the information for the node
-     * @return the complete finance node
-     */
-    private static FinanceNode getFinanceNodeFromCursor(Cursor cursor) {
-        FinanceNode node = new FinanceNode();
-        node.setId(cursor.getShort(0));
-        node.setCompleteCode(cursor.getString(1));
-        node.setName(cursor.getString(2));
-        node.setDescription(cursor.getString(3));
-        node.setParent_Id(cursor.getShort(4));
-        node.setBalance(new BigDecimal(cursor.getString(5)));
-        // TODO
-        return node;
     }
 }

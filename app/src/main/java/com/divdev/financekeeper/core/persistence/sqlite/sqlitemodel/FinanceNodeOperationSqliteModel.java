@@ -1,4 +1,4 @@
-package com.divdev.financekeeper.core.persistence.sqlite;
+package com.divdev.financekeeper.core.persistence.sqlite.sqlitemodel;
 
 import android.provider.BaseColumns;
 
@@ -7,7 +7,7 @@ import android.provider.BaseColumns;
  *
  * @author jlopez
  */
-public class FinanceNodeOperationSqliteImpl implements BaseColumns {
+public class FinanceNodeOperationSqliteModel implements BaseColumns {
     public static final String TABLE_NAME = "FINANCE_NODE_OPERATION";
     public static final String COLUMN_ID = "FNOID";
     public static final String COLUMN_OPERATION_TYPE = "FNOOPTYPE";
@@ -35,8 +35,8 @@ public class FinanceNodeOperationSqliteImpl implements BaseColumns {
         createTableBuilder.append(COLUMN_LOCATION_LONGITUDE).append(" NUMBER");
 
         createTableBuilder.append(",FOREIGN KEY(").append(COLUMN_TAG).append(") REFERENCES ");
-        createTableBuilder.append(OperationTagSqliteImpl.TABLE_NAME).
-                append("(").append(OperationTagSqliteImpl.COLUMN_ID).append(") ");
+        createTableBuilder.append(OperationTagSqliteModel.TABLE_NAME).
+                append("(").append(OperationTagSqliteModel.COLUMN_ID).append(") ");
 
         createTableBuilder.append(")");
         CREATE_TABLE = createTableBuilder.toString();
