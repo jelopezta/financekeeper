@@ -2,7 +2,7 @@ package com.divdev.financekeeper.core.persistence.model;
 
 import android.content.Context;
 
-import com.divdev.financekeeper.core.persistence.sqlite.sqlitemodel.FinanceNodeSqliteImpl;
+import com.divdev.financekeeper.core.persistence.sqlite.FinanceNodeSqliteImpl;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -17,7 +17,7 @@ public class FinanceNode {
     /**
      * Finance Node code.
      */
-    private int id;
+    private short id;
 
     /**
      * Finance Node complete code. code of the node normalized to 2 characters with the complete code of his parent.
@@ -41,6 +41,11 @@ public class FinanceNode {
     private FinanceNode parent;
 
     /**
+     * Id of the parent of this FinanceNode. May be null for absolute parents.
+     */
+    private Short parent_id;
+
+    /**
      * Balance of the node.
      */
     private BigDecimal balance;
@@ -50,7 +55,7 @@ public class FinanceNode {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(short id) {
         this.id = id;
     }
 
@@ -84,6 +89,14 @@ public class FinanceNode {
 
     public void setParent(FinanceNode parent) {
         this.parent = parent;
+    }
+
+    public Short getParent_Id() {
+        return parent_id;
+    }
+
+    public void setParent_Id(Short parentId) {
+        this.parent_id = parentId;
     }
 
     public BigDecimal getBalance() {

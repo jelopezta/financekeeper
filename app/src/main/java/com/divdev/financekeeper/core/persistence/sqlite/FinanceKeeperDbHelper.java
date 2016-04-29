@@ -4,10 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.divdev.financekeeper.core.persistence.sqlite.sqlitemodel.FinanceNodeOperationSqliteImpl;
-import com.divdev.financekeeper.core.persistence.sqlite.sqlitemodel.FinanceNodeSqliteImpl;
-import com.divdev.financekeeper.core.persistence.sqlite.sqlitemodel.OperationTagSqliteImpl;
-
 /**
  * SQLite Helper
  *
@@ -39,6 +35,9 @@ public class FinanceKeeperDbHelper extends SQLiteOpenHelper {
         db.execSQL(FinanceNodeSqliteImpl.CREATE_TABLE);
         db.execSQL(OperationTagSqliteImpl.CREATE_TABLE);
         db.execSQL(FinanceNodeOperationSqliteImpl.CREATE_TABLE);
+
+        db.execSQL(FinanceNodeSqliteImpl.INSERT_WALLET);
+
     }
 
     @Override

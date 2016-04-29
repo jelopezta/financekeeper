@@ -1,4 +1,4 @@
-package com.divdev.financekeeper.core.persistence.sqlite.sqlitemodel;
+package com.divdev.financekeeper.core.persistence.sqlite;
 
 import android.provider.BaseColumns;
 

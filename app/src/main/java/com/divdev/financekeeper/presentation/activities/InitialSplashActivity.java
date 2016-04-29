@@ -25,7 +25,7 @@ public class InitialSplashActivity extends AppCompatActivity {
         Thread timerThread = new Thread() {
             public void run() {
                 try {
-                   // List<FinanceNode> financeNodeList = FinanceNode.getAllFinanceNodes(getApplicationContext());
+                    List<FinanceNode> financeNodeList = FinanceNode.getAllFinanceNodes(getApplicationContext());
                     sleep(3000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();

@@ -1,4 +1,4 @@
-package com.divdev.financekeeper.core.persistence.sqlite.sqlitemodel;
+package com.divdev.financekeeper.core.persistence.sqlite;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -6,8 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
 
 import com.divdev.financekeeper.core.persistence.model.FinanceNode;
-import com.divdev.financekeeper.core.persistence.sqlite.FinanceKeeperDbHelper;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +27,8 @@ public final class FinanceNodeSqliteImpl implements BaseColumns {
 
     public static final String CREATE_TABLE;
 
+    public static final String INSERT_WALLET;
+
     static {
         StringBuilder createTableBuilder = new StringBuilder();
         createTableBuilder.append("CREATE TABLE ").append(TABLE_NAME).append(" (");
@@ -42,6 +44,25 @@ public final class FinanceNodeSqliteImpl implements BaseColumns {
                 .append("(").append(COLUMN_ID).append(") ");
         createTableBuilder.append(")");
         CREATE_TABLE = createTableBuilder.toString();
+
+
+        StringBuilder insertWalletBuilder = new StringBuilder();
+        insertWalletBuilder.append("INSERT INTO " + TABLE_NAME).append(" (");
+        insertWalletBuilder.append(COLUMN_ID).append(", ");
+        insertWalletBuilder.append(COLUMN_COMPLETE_CODE).append(", ");
+        insertWalletBuilder.append(COLUMN_NAME).append(", ");
+        insertWalletBuilder.append(COLUMN_DESCRIPTION).append(", ");
+        insertWalletBuilder.append(COLUMN_PARENT).append(", ");
+        insertWalletBuilder.append(COLUMN_BALANCE).append(") ");
+        insertWalletBuilder.append("VALUES (");
+        insertWalletBuilder.append("1, ");
+        insertWalletBuilder.append("'001', ");
+        insertWalletBuilder.append("'Wallet', ");
+        insertWalletBuilder.append("'Money carried inside main wallet', ");
+        insertWalletBuilder.append("NULL, ");
+        insertWalletBuilder.append(100_000d).append(")");
+        INSERT_WALLET = insertWalletBuilder.toString();
+
     }
 
     /**
@@ -59,13 +80,16 @@ public final class FinanceNodeSqliteImpl implements BaseColumns {
             readableDatabase = helper.getReadableDatabase();
 
             String[] cursorSelectColumns = new String[]{
-                    FinanceNodeSqliteImpl.COLUMN_ID,
-                    FinanceNodeSqliteImpl.COLUMN_COMPLETE_CODE
-                    // TODO
+                    COLUMN_ID,
+                    COLUMN_COMPLETE_CODE,
+                    COLUMN_NAME,
+                    COLUMN_DESCRIPTION,
+                    COLUMN_PARENT,
+                    COLUMN_BALANCE
             };
-            String cursorOrderBy = FinanceNodeSqliteImpl.COLUMN_COMPLETE_CODE;
+            String cursorOrderBy = COLUMN_COMPLETE_CODE;
             // perform query
-            Cursor cursor = readableDatabase.query(FinanceNodeSqliteImpl.TABLE_NAME, cursorSelectColumns,
+            Cursor cursor = readableDatabase.query(TABLE_NAME, cursorSelectColumns,
                     null, null, null, null, cursorOrderBy); // get all rows
 
             if (cursor != null) {
@@ -94,7 +118,12 @@ public final class FinanceNodeSqliteImpl implements BaseColumns {
      */
     private static FinanceNode getFinanceNodeFromCursor(Cursor cursor) {
         FinanceNode node = new FinanceNode();
-        node.setId(cursor.getInt(0));
+        node.setId(cursor.getShort(0));
+        node.setCompleteCode(cursor.getString(1));
+        node.setName(cursor.getString(2));
+        node.setDescription(cursor.getString(3));
+        node.setParent_Id(cursor.getShort(4));
+        node.setBalance(new BigDecimal(cursor.getString(5)));
         // TODO
         return node;
     }
