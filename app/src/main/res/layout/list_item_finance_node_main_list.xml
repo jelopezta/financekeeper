@@ -9,8 +9,10 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="210dp"
-        android:layout_height="wrap_content">
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/list_item_finance_node_main_margin"
+        android:paddingRight="@dimen/list_item_finance_node_main_margin">
 
         <TextView
             android:layout_width="match_parent"
@@ -19,6 +21,8 @@
             android:text="Node Name"
             android:id="@+id/main_list_item_name"
             android:maxLines="1"
+            android:textStyle="bold"
+
             android:ellipsize="end"
             android:layout_weight="70" />
 
@@ -34,9 +38,9 @@
     </LinearLayout>
 
     <TextView
-        android:layout_width="100dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceListItem"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Node Balance"
         android:textStyle="bold"
         android:gravity="right"

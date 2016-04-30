@@ -10,4 +10,5 @@
     <dimen name="financenode_listitem_balance_padding">16dp</dimen>
     <dimen name="financenode_totalbalance_padding_left">12dp</dimen>
     <dimen name="financenode_listitem_general_padding">10dp</dimen>
+    <dimen name="list_item_finance_node_main_margin">10dp</dimen>
 </resources>
