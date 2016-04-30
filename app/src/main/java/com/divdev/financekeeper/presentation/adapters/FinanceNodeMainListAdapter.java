@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import com.divdev.financekeeper.R;
 import com.divdev.financekeeper.core.persistence.model.FinanceNode;
 
+import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.util.List;
 
 /**
@@ -38,7 +40,11 @@ public class FinanceNodeMainListAdapter extends RecyclerView.Adapter<FinanceNode
         //Setting list item values
         holder.financeNodeName.setText(feedItem.getName());
         holder.financeNodeDescription.setText(feedItem.getDescription());
-        holder.financeNodeBalance.setText(feedItem.getBalance().toPlainString());
+
+        // Format balance in system currency
+        final BigDecimal balance = feedItem.getBalance();
+        final NumberFormat currencyInstance = NumberFormat.getCurrencyInstance();
+        holder.financeNodeBalance.setText(currencyInstance.format(balance));
     }
 
     @Override
