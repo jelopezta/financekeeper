@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.divdev.financekeeper.FinanceKeeperApplication;
 import com.divdev.financekeeper.R;
 import com.divdev.financekeeper.core.persistence.model.FinanceNode;
 import com.divdev.financekeeper.presentation.adapters.FinanceNodeMainListAdapter;
@@ -53,9 +54,13 @@ public class FinanceKeeperMainActivity extends AppCompatActivity
         // Initialize recycler view
         RecyclerView recyclerViewList = (RecyclerView) findViewById(R.id.financenode_main_list);
         recyclerViewList.setLayoutManager(new LinearLayoutManager(this));
+
+        // TODO remove mocked list
         List<FinanceNode> listaNodos = new ArrayList<>();
         ListFiller.llenarListaNodos(listaNodos);
 
+        final FinanceKeeperApplication application = (FinanceKeeperApplication) this.getApplication();
+        final List<FinanceNode> financeNodeListCache = application.getFinanceNodeListCache();
         recyclerViewList.setAdapter(new FinanceNodeMainListAdapter(this, listaNodos));
     }
 
