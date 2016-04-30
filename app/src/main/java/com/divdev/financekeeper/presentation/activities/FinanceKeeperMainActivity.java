@@ -13,6 +13,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.divdev.financekeeper.FinanceKeeperApplication;
 import com.divdev.financekeeper.R;
@@ -20,6 +21,8 @@ import com.divdev.financekeeper.core.persistence.model.FinanceNode;
 import com.divdev.financekeeper.presentation.adapters.FinanceNodeMainListAdapter;
 import com.divdev.financekeeper.presentation.mocks.ListFiller;
 
+import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,6 +65,11 @@ public class FinanceKeeperMainActivity extends AppCompatActivity
         final FinanceKeeperApplication application = (FinanceKeeperApplication) this.getApplication();
         final List<FinanceNode> financeNodeListCache = application.getFinanceNodeListCache();
         recyclerViewList.setAdapter(new FinanceNodeMainListAdapter(this, listaNodos));
+
+        BigDecimal totalBalance = new BigDecimal(1_000_000_000); // TODO obtain real total from list
+        TextView financeNodeTotalBalance = (TextView) findViewById(R.id.main_list_totalBalance);
+        final NumberFormat currencyInstance = NumberFormat.getCurrencyInstance();
+        financeNodeTotalBalance.setText(currencyInstance.format(totalBalance));
     }
 
 

@@ -48,7 +48,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textStyle="bold"
                 android:text="000.000.000,00"
-                android:id="@+id/totalBalance" />
+                android:id="@+id/main_list_totalBalance" />
         </LinearLayout>
 
     </LinearLayout>
