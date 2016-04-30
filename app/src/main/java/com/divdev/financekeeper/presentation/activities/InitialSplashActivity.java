@@ -7,6 +7,7 @@ import android.view.WindowManager;
 
 import com.divdev.financekeeper.FinanceKeeperApplication;
 import com.divdev.financekeeper.R;
+import com.divdev.financekeeper.core.persistence.PersistenceSystem;
 import com.divdev.financekeeper.core.persistence.model.FinanceNode;
 
 import java.util.List;
@@ -22,8 +23,7 @@ public class InitialSplashActivity extends AppCompatActivity {
         Thread initFinanceNodeCacheThread = new Thread(new Runnable() {
             @Override
             public void run() {
-                List<FinanceNode> financeNodeList = FinanceNode.getAllFinanceNodes(getApplicationContext());
-                ((FinanceKeeperApplication) InitialSplashActivity.this.getApplication()).setFinanceNodeListCache(financeNodeList);
+                List<FinanceNode> financeNodeList = PersistenceSystem.getInstance().getFinanceNodeListCache();
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {

@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.divdev.financekeeper.FinanceKeeperApplication;
 import com.divdev.financekeeper.R;
+import com.divdev.financekeeper.core.persistence.PersistenceSystem;
 import com.divdev.financekeeper.core.persistence.model.FinanceNode;
 import com.divdev.financekeeper.presentation.adapters.FinanceNodeMainListAdapter;
 import com.divdev.financekeeper.presentation.mocks.ListFiller;
@@ -63,7 +64,7 @@ public class FinanceKeeperMainActivity extends AppCompatActivity
         ListFiller.llenarListaNodos(listaNodos);
 
         final FinanceKeeperApplication application = (FinanceKeeperApplication) this.getApplication();
-        final List<FinanceNode> financeNodeListCache = application.getFinanceNodeListCache();
+        final List<FinanceNode> financeNodeListCache = PersistenceSystem.getInstance().getFinanceNodeListCache();
         recyclerViewList.setAdapter(new FinanceNodeMainListAdapter(this, listaNodos));
 
         BigDecimal totalBalance = new BigDecimal(1_000_000_000); // TODO obtain real total from list

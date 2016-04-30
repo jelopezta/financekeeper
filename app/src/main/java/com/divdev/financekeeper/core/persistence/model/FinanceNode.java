@@ -2,6 +2,7 @@ package com.divdev.financekeeper.core.persistence.model;
 
 import android.content.Context;
 
+import com.divdev.financekeeper.core.persistence.PersistenceSystem;
 import com.divdev.financekeeper.core.persistence.sqlite.sqlitedao.FinanceNodeSqliteDao;
 
 import java.math.BigDecimal;
@@ -105,15 +106,5 @@ public class FinanceNode {
 
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
-    }
-
-    /**
-     * Returns the full list of Finance Nodes.
-     *
-     * @param applicationContext the context of the application
-     * @return the list of finance nodes
-     */
-    public static List<FinanceNode> getAllFinanceNodes(Context applicationContext) {
-        return FinanceNodeSqliteDao.getAllFinanceNodes(applicationContext);
     }
 }

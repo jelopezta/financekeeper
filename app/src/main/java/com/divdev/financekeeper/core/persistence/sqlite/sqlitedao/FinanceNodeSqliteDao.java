@@ -20,15 +20,28 @@ import java.util.List;
 public class FinanceNodeSqliteDao {
 
     /**
+     * The application context.
+     */
+    private Context context;
+
+    /**
+     * Constructor with mandatory attribute.
+     *
+     * @param context the application's context
+     */
+    public FinanceNodeSqliteDao(Context context) {
+        this.context = context;
+    }
+
+    /**
      * Obtains the full list of finance nodes in the database.
      *
-     * @param applicationContext context of the application
      * @return the list of finance nodes in the database
      */
-    public static List<FinanceNode> getAllFinanceNodes(Context applicationContext) {
+    public List<FinanceNode> getAllFinanceNodes() {
         List<FinanceNode> nodes = new ArrayList<FinanceNode>();
 
-        FinanceKeeperDbHelper helper = new FinanceKeeperDbHelper(applicationContext);
+        FinanceKeeperDbHelper helper = new FinanceKeeperDbHelper(context);
         SQLiteDatabase readableDatabase = null;
         try {
             readableDatabase = helper.getReadableDatabase();
@@ -78,7 +91,6 @@ public class FinanceNodeSqliteDao {
         node.setDescription(cursor.getString(3));
         node.setParent_Id(cursor.getShort(4));
         node.setBalance(new BigDecimal(cursor.getString(5)));
-        // TODO
         return node;
     }
 }
