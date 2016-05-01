@@ -1,4 +1,4 @@
-package com.divdev.financekeeper.presentation.AsyncTask;
+package com.divdev.financekeeper.presentation.asynctask;
 
 /**
  * Interface to receive asyncTask responses
