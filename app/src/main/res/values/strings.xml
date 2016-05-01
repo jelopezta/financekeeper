@@ -2,7 +2,10 @@
     <string name="app_name">Finance Keeper</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- Splash screen -->
     <string name="splash_text">Your finances pocket guardian</string>
+    <string name="splash_icon_licence">Icons made by Freepik from Flaticon (www.flaticon.com) is licensed by CC 3.0 BY</string>
 
     <!-- Main menu options -->
     <string name="action_settings">Settings</string>
