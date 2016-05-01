@@ -4,12 +4,10 @@ import android.app.Application;
 import android.content.Context;
 
 import com.divdev.financekeeper.core.persistence.PersistenceSystem;
-import com.divdev.financekeeper.core.persistence.model.FinanceNode;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
+ * Extended Application for global component initialization.
+ *
  * @author jlopez
  */
 public class FinanceKeeperApplication extends Application {
@@ -25,8 +23,6 @@ public class FinanceKeeperApplication extends Application {
     public Context getFinanceKeeperContext() {
         return mContext;
     }
-
-
 
     @Override
     public void onCreate() {

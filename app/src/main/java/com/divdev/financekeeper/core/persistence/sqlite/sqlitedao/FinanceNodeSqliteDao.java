@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.divdev.financekeeper.core.persistence.dao.FinanceNodeDao;
 import com.divdev.financekeeper.core.persistence.model.FinanceNode;
 import com.divdev.financekeeper.core.persistence.sqlite.FinanceKeeperDbHelper;
 import com.divdev.financekeeper.core.persistence.sqlite.sqlitemodel.FinanceNodeSqliteModel;
@@ -17,7 +18,7 @@ import java.util.List;
  *
  * @author jlopez
  */
-public class FinanceNodeSqliteDao {
+public class FinanceNodeSqliteDao implements FinanceNodeDao {
 
     /**
      * The application context.
