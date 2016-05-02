@@ -65,7 +65,7 @@ public class FinanceKeeperMainActivity extends AppCompatActivity
 
         final FinanceKeeperApplication application = (FinanceKeeperApplication) this.getApplication();
         final List<FinanceNode> financeNodeListCache = PersistenceSystem.getInstance().getFinanceNodeListCache();
-        recyclerViewList.setAdapter(new FinanceNodeMainListAdapter(this, listaNodos));
+        recyclerViewList.setAdapter(new FinanceNodeMainListAdapter(this, financeNodeListCache));
 
         BigDecimal totalBalance = new BigDecimal(1_000_000_000); // TODO obtain real total from list
         TextView financeNodeTotalBalance = (TextView) findViewById(R.id.main_list_totalBalance);

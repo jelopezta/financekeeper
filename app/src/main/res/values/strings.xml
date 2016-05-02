@@ -21,5 +21,19 @@
     <string name="operation_type_moved_balance_to">Moved Balance To</string>
     <string name="operation_type_moved_balance_from">Moved Balance From</string>
     <string name="totalBalanceLabel">Total Balance</string>
+    <string name="default_node_insert_wallet_name">Wallet</string>
+    <string name="default_node_insert_wallet_description">Main wallet</string>
+    <string name="default_node_insert_main_account_name">Main Account</string>
+    <string name="default_node_insert_main_account_description">Main Bank Account</string>
+    <string name="default_node_insert_auxiliary_account_name">Auxiliary Account</string>
+    <string name="default_node_insert_auxiliary_account_description">Auxiliary Bank Account</string>
+    <string name="default_node_insert_main_account_bills_name">Bills</string>
+    <string name="default_node_insert_main_account_bills_description">electricity, water, gas and sanitation</string>
+    <string name="default_node_insert_main_account_rent_name">Rent</string>
+    <string name="default_node_insert_main_account_rent_description">Rent reserve</string>
+    <string name="default_node_insert_auxiliary_account_savings_name">Savings</string>
+    <string name="default_node_insert_auxiliary_account_savings_description">Long Term Savings</string>
+    <string name="default_node_insert_auxiliary_account_trip_reserve_name">Trip Reserve</string>
+    <string name="default_node_insert_auxiliary_account_trip_reserve_description">Reserved money for trips</string>
 
 </resources>

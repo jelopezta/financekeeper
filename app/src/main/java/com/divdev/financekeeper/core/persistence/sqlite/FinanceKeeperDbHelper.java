@@ -25,12 +25,18 @@ public class FinanceKeeperDbHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "FinanceKeeper.db";
 
     /**
+     * The application context.
+     */
+    private Context context;
+
+    /**
      * Constructor with mandatory attribute Context.
      *
      * @param context the application context
      */
     public FinanceKeeperDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context = context;
     }
 
     @Override
@@ -40,7 +46,16 @@ public class FinanceKeeperDbHelper extends SQLiteOpenHelper {
         db.execSQL(OperationTagSqliteModel.CREATE_TABLE);
         db.execSQL(FinanceNodeOperationSqliteModel.CREATE_TABLE);
 
-        db.execSQL(FinanceNodeSqliteModel.INSERT_WALLET);
+        db.execSQL(FinanceNodeSqliteModel.getDefaultInsertWallet(context));
+
+        db.execSQL(FinanceNodeSqliteModel.getDefaultInsertMainAccount(context));
+        db.execSQL(FinanceNodeSqliteModel.getDefaultInsertMainAccountBills(context));
+        db.execSQL(FinanceNodeSqliteModel.getDefaultInsertMainAccountRent(context));
+
+        db.execSQL(FinanceNodeSqliteModel.getDefaultInsertAuxiliaryAccount(context));
+        db.execSQL(FinanceNodeSqliteModel.getDefaultInsertAuxiliaryAccountSavings(context));
+        db.execSQL(FinanceNodeSqliteModel.getDefaultInsertAuxiliaryAccountTripReserve(context));
+
 
     }
 
