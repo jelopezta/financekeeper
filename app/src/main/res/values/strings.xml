@@ -28,7 +28,7 @@
     <string name="default_node_insert_auxiliary_account_name">Auxiliary Account</string>
     <string name="default_node_insert_auxiliary_account_description">Auxiliary Bank Account</string>
     <string name="default_node_insert_main_account_bills_name">Bills</string>
-    <string name="default_node_insert_main_account_bills_description">electricity, water, gas and sanitation</string>
+    <string name="default_node_insert_main_account_bills_description">Electricity, water, gas and sanitation</string>
     <string name="default_node_insert_main_account_rent_name">Rent</string>
     <string name="default_node_insert_main_account_rent_description">Rent reserve</string>
     <string name="default_node_insert_auxiliary_account_savings_name">Savings</string>

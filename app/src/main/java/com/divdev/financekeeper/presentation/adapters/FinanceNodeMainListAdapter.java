@@ -37,9 +37,19 @@ public class FinanceNodeMainListAdapter extends RecyclerView.Adapter<FinanceNode
     @Override
     public void onBindViewHolder(FinanceNodeMainListViewHolder holder, int position) {
         FinanceNode feedItem = feedItemList.get(position);
+
+        StringBuilder treePrefix = new StringBuilder();
+        short tokens = (short) (feedItem.getCompleteCode().length() / FinanceNode.NODE_COMPLETE_CODE_TOKEN_LENGHT);
+        for (int i = 0; i < tokens - 1; i++) {
+            treePrefix.append("      ");
+        }
+        String prefix = treePrefix.toString();
         //Setting list item values
-        holder.financeNodeName.setText(feedItem.getName());
-        holder.financeNodeDescription.setText(feedItem.getDescription());
+        final String initialPipeNodeName = "| ";
+        final String initialPipeNodeDescription = prefix.isEmpty() ? "| " : " | ";
+
+        holder.financeNodeName.setText(prefix + initialPipeNodeName + feedItem.getName());
+        holder.financeNodeDescription.setText(prefix + initialPipeNodeDescription + feedItem.getDescription());
 
         // Format balance in system currency
         final BigDecimal balance = feedItem.getBalance();

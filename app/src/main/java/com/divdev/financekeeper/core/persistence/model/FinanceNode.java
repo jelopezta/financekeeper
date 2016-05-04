@@ -16,6 +16,11 @@ import java.util.List;
 public class FinanceNode {
 
     /**
+     * Length of each token of the complete code of a node.
+     */
+    public static final short NODE_COMPLETE_CODE_TOKEN_LENGHT = 3;
+
+    /**
      * Finance Node code.
      */
     private short id;
