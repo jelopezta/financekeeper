@@ -20,11 +20,9 @@ import com.divdev.financekeeper.R;
 import com.divdev.financekeeper.core.persistence.PersistenceSystem;
 import com.divdev.financekeeper.core.persistence.model.FinanceNode;
 import com.divdev.financekeeper.presentation.adapters.FinanceNodeMainListAdapter;
-import com.divdev.financekeeper.presentation.mocks.ListFiller;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 public class FinanceKeeperMainActivity extends AppCompatActivity
@@ -59,10 +57,6 @@ public class FinanceKeeperMainActivity extends AppCompatActivity
         RecyclerView recyclerViewList = (RecyclerView) findViewById(R.id.financenode_main_list);
         recyclerViewList.setLayoutManager(new LinearLayoutManager(this));
 
-        // TODO remove mocked list
-        List<FinanceNode> listaNodos = new ArrayList<>();
-        ListFiller.llenarListaNodos(listaNodos);
-
         final FinanceKeeperApplication application = (FinanceKeeperApplication) this.getApplication();
         final List<FinanceNode> financeNodeListCache = PersistenceSystem.getInstance().getFinanceNodeListCache();
         recyclerViewList.setAdapter(new FinanceNodeMainListAdapter(this, financeNodeListCache));
@@ -90,7 +84,7 @@ public class FinanceKeeperMainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.add_finance_node_menu_item) {
-            // Handle the camera action
+
         } else if (id == R.id.remove_finance_node_menu_item) {
 
         } else if (id == R.id.add_tag_menu_item) {
