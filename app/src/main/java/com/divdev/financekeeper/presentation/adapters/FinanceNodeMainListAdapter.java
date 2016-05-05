@@ -19,12 +19,19 @@ import java.util.List;
  * @author jlopez
  */
 public class FinanceNodeMainListAdapter extends RecyclerView.Adapter<FinanceNodeMainListViewHolder> {
+    /**
+     * List of items to display.
+     */
     private List<FinanceNode> feedItemList;
-    private Context mContext;
 
-    public FinanceNodeMainListAdapter(Context context, List<FinanceNode> feedItemList) {
+
+    /**
+     * Constructor with mandatory attributes.
+     *
+     * @param feedItemList the list of items to display
+     */
+    public FinanceNodeMainListAdapter(List<FinanceNode> feedItemList) {
         this.feedItemList = feedItemList;
-        this.mContext = context;
     }
 
     @Override

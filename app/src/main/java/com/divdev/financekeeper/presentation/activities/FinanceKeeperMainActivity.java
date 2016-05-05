@@ -1,5 +1,7 @@
 package com.divdev.financekeeper.presentation.activities;
 
+import android.app.Activity;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -13,6 +15,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.divdev.financekeeper.FinanceKeeperApplication;
@@ -20,6 +23,7 @@ import com.divdev.financekeeper.R;
 import com.divdev.financekeeper.core.persistence.PersistenceSystem;
 import com.divdev.financekeeper.core.persistence.model.FinanceNode;
 import com.divdev.financekeeper.presentation.adapters.FinanceNodeMainListAdapter;
+import com.divdev.financekeeper.presentation.adapters.OperationListAdapter;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
@@ -39,8 +43,18 @@ public class FinanceKeeperMainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Dialog dialog = new Dialog(FinanceKeeperMainActivity.this);
+                dialog.setContentView(R.layout.content_operation_dialog);
+                dialog.setCancelable(true);
+                dialog.setTitle("ListView");
+                RecyclerView lv = (RecyclerView ) dialog.findViewById(R.id.operation_main_list);
+                lv.setAdapter(new OperationListAdapter(dialog.getContext()));
+                lv.setLayoutManager(new LinearLayoutManager(dialog.getContext()));
+                dialog.show(); // TODOd
+                //       Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                //             .setAction("Action", null).show();
+
+
             }
         });
 
@@ -59,7 +73,7 @@ public class FinanceKeeperMainActivity extends AppCompatActivity
 
         final FinanceKeeperApplication application = (FinanceKeeperApplication) this.getApplication();
         final List<FinanceNode> financeNodeListCache = PersistenceSystem.getInstance().getFinanceNodeListCache();
-        recyclerViewList.setAdapter(new FinanceNodeMainListAdapter(this, financeNodeListCache));
+        recyclerViewList.setAdapter(new FinanceNodeMainListAdapter(financeNodeListCache));
 
         BigDecimal totalBalance = new BigDecimal(1_000_000_000); // TODO obtain real total from list
         TextView financeNodeTotalBalance = (TextView) findViewById(R.id.main_list_totalBalance);
