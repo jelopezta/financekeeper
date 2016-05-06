@@ -34,17 +34,17 @@ public class OperationListAdapter extends RecyclerView.Adapter<OperationListView
     public OperationListAdapter(Context context) {
         this.mContext = context;
         OperationItem operationAdd = new OperationItem();
-        operationAdd.operationIconResource = R.drawable.main_icon;
+        operationAdd.operationIconResource = R.drawable.ic_menu_gallery;
         operationAdd.operationTitle = "Add Balance";
         operationAdd.operationDescription = "Add balance to a finance node.";
 
         OperationItem operationSubtract = new OperationItem();
-        operationSubtract.operationIconResource = R.drawable.main_icon;
+        operationSubtract.operationIconResource = R.drawable.ic_menu_gallery;
         operationSubtract.operationTitle = "Subtract Balance";
         operationSubtract.operationDescription = "Subtract balance from a finance node.";
 
         OperationItem operationMove = new OperationItem();
-        operationMove.operationIconResource = R.drawable.main_icon;
+        operationMove.operationIconResource = R.drawable.ic_menu_gallery;
         operationMove.operationTitle = "Move Balance";
         operationMove.operationDescription = "move balance between two finance nodes.";
 
