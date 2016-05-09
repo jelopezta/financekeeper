@@ -35,9 +35,6 @@
             android:screenOrientation="portrait"
             android:parentActivityName=".presentation.activities.FinanceKeeperMainActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.divdev.financekeeper.presentation.activities.FinanceKeeperMainActivity" />
         </activity>
     </application>
 
