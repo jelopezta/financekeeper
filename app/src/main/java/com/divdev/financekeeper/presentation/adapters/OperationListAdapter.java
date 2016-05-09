@@ -108,7 +108,7 @@ public class OperationListAdapter extends RecyclerView.Adapter<OperationListView
     /**
      * Anchor class for operation list.
      */
-    private class OperationItem {
+    private static class OperationItem {
         /**
          * The id of the icon resource for the operation.
          */
