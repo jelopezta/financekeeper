@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.divdev.financekeeper.R;
+import com.divdev.financekeeper.core.persistence.model.OperationType;
 
 /**
  * @author jlopez
@@ -23,6 +24,11 @@ public class OperationListViewHolder extends RecyclerView.ViewHolder {
      * Text view for the operation's description.
      */
     protected TextView operationDescription;
+
+    /**
+     * The operationType for the view.
+     */
+    protected OperationType operationType;
 
     /**
      * Constructor with mandatory view

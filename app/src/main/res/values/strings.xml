@@ -18,8 +18,8 @@
     <!-- Finance Node Operation Types names -->
     <string name="operation_type_add_balance">Add Balance</string>
     <string name="operation_type_subtract_balance">Subtract Balance</string>
-    <string name="operation_type_moved_balance_to">Moved Balance To</string>
-    <string name="operation_type_moved_balance_from">Moved Balance From</string>
+    <string name="operation_type_moved_balance_to">Move Balance To</string>
+    <string name="operation_type_moved_balance_from">Move Balance From</string>
     <string name="totalBalanceLabel">Total Balance</string>
     <string name="default_node_insert_wallet_name">Wallet</string>
     <string name="default_node_insert_wallet_description">Main wallet</string>
@@ -35,6 +35,8 @@
     <string name="default_node_insert_auxiliary_account_savings_description">Long Term Savings</string>
     <string name="default_node_insert_auxiliary_account_trip_reserve_name">Trip Reserve</string>
     <string name="default_node_insert_auxiliary_account_trip_reserve_description">Reserved money for trips</string>
+
+    <!-- Operation activity string resources -->
     <string name="title_activity_operation">OperationActivity</string>
 
 </resources>

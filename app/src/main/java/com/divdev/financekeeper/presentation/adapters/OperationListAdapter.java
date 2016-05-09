@@ -1,15 +1,23 @@
 package com.divdev.financekeeper.presentation.adapters;
 
+import android.app.Activity;
+import android.app.Presentation;
 import android.content.Context;
-import android.content.res.Resources;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.divdev.financekeeper.R;
+import com.divdev.financekeeper.core.persistence.model.OperationType;
+import com.divdev.financekeeper.presentation.activities.FinanceKeeperMainActivity;
+import com.divdev.financekeeper.presentation.activities.OperationActivity;
+import com.divdev.financekeeper.presentation.dialogs.OperationListFragment;
+import com.divdev.financekeeper.presentation.utils.PresentationUtilities;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,22 +39,36 @@ public class OperationListAdapter extends RecyclerView.Adapter<OperationListView
      */
     Context mContext;
 
-    public OperationListAdapter(Context context) {
+    /**
+     * The fragment that contains the list backed by this adapter.
+     */
+    OperationListFragment operationFragment;
+
+    /**
+     * Constructor with mandatory attributes
+     *
+     * @param operationFragment the fragment that contains the component backed by this adapter
+     */
+    public OperationListAdapter(Context context, OperationListFragment operationFragment) {
         this.mContext = context;
+        this.operationFragment = operationFragment;
         OperationItem operationAdd = new OperationItem();
         operationAdd.operationIconResource = R.drawable.ic_menu_gallery;
         operationAdd.operationTitle = "Add Balance";
         operationAdd.operationDescription = "Add balance to a finance node.";
+        operationAdd.operationType = OperationType.ADD_BALANCE;
 
         OperationItem operationSubtract = new OperationItem();
         operationSubtract.operationIconResource = R.drawable.ic_menu_gallery;
         operationSubtract.operationTitle = "Subtract Balance";
         operationSubtract.operationDescription = "Subtract balance from a finance node.";
+        operationSubtract.operationType = OperationType.SUBTRACT_BALANCE;
 
         OperationItem operationMove = new OperationItem();
         operationMove.operationIconResource = R.drawable.ic_menu_gallery;
         operationMove.operationTitle = "Move Balance";
         operationMove.operationDescription = "move balance between two finance nodes.";
+        operationMove.operationType = OperationType.MOVE_BALANCE_TO;
 
         operationItemList.add(operationAdd);
         operationItemList.add(operationSubtract);
@@ -57,6 +79,14 @@ public class OperationListAdapter extends RecyclerView.Adapter<OperationListView
     public OperationListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_operation_dialog, null);
         OperationListViewHolder viewHolder = new OperationListViewHolder(view);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OperationListViewHolder viewHolder = (OperationListViewHolder) v.getTag();
+                operationFragment.onOperationSelected(viewHolder.operationType);
+            }
+        });
+        view.setTag(viewHolder);
         return viewHolder;
     }
 
@@ -67,6 +97,7 @@ public class OperationListAdapter extends RecyclerView.Adapter<OperationListView
         holder.operationIcon.setImageDrawable(drawable);
         holder.operationTitle.setText(operationItem.operationTitle);
         holder.operationDescription.setText(operationItem.operationDescription);
+        holder.operationType = operationItem.operationType;
     }
 
     @Override
@@ -92,6 +123,11 @@ public class OperationListAdapter extends RecyclerView.Adapter<OperationListView
          * The description for the operation.
          */
         private String operationDescription;
+
+        /**
+         * The operation type.
+         */
+        private OperationType operationType;
     }
 
 }

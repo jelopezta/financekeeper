@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.divdev.financekeeper.R;
+import com.divdev.financekeeper.core.persistence.model.OperationType;
+import com.divdev.financekeeper.presentation.utils.PresentationUtilities;
 
 public class OperationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -37,11 +39,15 @@ public class OperationActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        final OperationType operationType = (OperationType)
+                this.getIntent().getSerializableExtra(PresentationUtilities.INTENT_OPERATION_TYPE_EXTRA);
+        this.setTitle(operationType.getDescription(this.getBaseContext()));
     }
 
     @Override
@@ -52,13 +58,6 @@ public class OperationActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.finance_keeper_main_drawer, menu);
-        return true;
     }
 
 
