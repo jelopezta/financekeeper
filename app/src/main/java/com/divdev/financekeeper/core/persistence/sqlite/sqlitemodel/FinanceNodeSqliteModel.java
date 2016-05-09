@@ -167,7 +167,7 @@ public final class FinanceNodeSqliteModel implements BaseColumns {
         insertBuilder.append("'").append(nodeCompleteCode).append("', ");
         insertBuilder.append("'").append(nodeName).append("', ");
         insertBuilder.append("'").append(nodeDescription).append("', ");
-        insertBuilder.append("NULL, ");
+        insertBuilder.append(nodeParent).append(", ");
         insertBuilder.append(100_000d).append(")"); // TODO
 
         return insertBuilder.toString();
