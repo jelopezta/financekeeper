@@ -54,20 +54,20 @@ public class OperationListAdapter extends RecyclerView.Adapter<OperationListView
         this.operationFragment = operationFragment;
         OperationItem operationAdd = new OperationItem();
         operationAdd.operationIconResource = R.drawable.ic_menu_gallery;
-        operationAdd.operationTitle = "Add Balance";
-        operationAdd.operationDescription = "Add balance to a finance node.";
+        operationAdd.operationTitle = context.getResources().getString(R.string.operation_add_balance_title);
+        operationAdd.operationDescription = context.getResources().getString(R.string.operation_add_balance_description);
         operationAdd.operationType = OperationType.ADD_BALANCE;
 
         OperationItem operationSubtract = new OperationItem();
         operationSubtract.operationIconResource = R.drawable.ic_menu_gallery;
-        operationSubtract.operationTitle = "Subtract Balance";
-        operationSubtract.operationDescription = "Subtract balance from a finance node.";
+        operationSubtract.operationTitle = context.getResources().getString(R.string.operation_subtract_balance_title);
+        operationSubtract.operationDescription = context.getResources().getString(R.string.operation_subtract_balance_description);
         operationSubtract.operationType = OperationType.SUBTRACT_BALANCE;
 
         OperationItem operationMove = new OperationItem();
         operationMove.operationIconResource = R.drawable.ic_menu_gallery;
-        operationMove.operationTitle = "Move Balance";
-        operationMove.operationDescription = "move balance between two finance nodes.";
+        operationMove.operationTitle = context.getResources().getString(R.string.operation_move_balance_to_title);
+        operationMove.operationDescription = context.getResources().getString(R.string.operation_move_balance_to_description);
         operationMove.operationType = OperationType.MOVE_BALANCE_TO;
 
         operationItemList.add(operationAdd);

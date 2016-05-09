@@ -3,10 +3,6 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <!-- Splash screen -->
-    <string name="splash_text">Your finances pocket guardian</string>
-    <string name="splash_icon_licence">Icons made by Freepik from Flaticon (www.flaticon.com) is licensed by CC 3.0 BY</string>
-
     <!-- Main menu options -->
     <string name="action_settings">Settings</string>
     <string name="add_finance_node_label">Add Finance Node</string>
@@ -20,7 +16,8 @@
     <string name="operation_type_subtract_balance">Subtract Balance</string>
     <string name="operation_type_moved_balance_to">Move Balance To</string>
     <string name="operation_type_moved_balance_from">Move Balance From</string>
-    <string name="totalBalanceLabel">Total Balance</string>
+
+    <!-- Default inserts -->
     <string name="default_node_insert_wallet_name">Wallet</string>
     <string name="default_node_insert_wallet_description">Main wallet</string>
     <string name="default_node_insert_main_account_name">Main Account</string>
@@ -35,6 +32,24 @@
     <string name="default_node_insert_auxiliary_account_savings_description">Long Term Savings</string>
     <string name="default_node_insert_auxiliary_account_trip_reserve_name">Trip Reserve</string>
     <string name="default_node_insert_auxiliary_account_trip_reserve_description">Reserved money for trips</string>
+
+
+
+    <!-- Splash screen string resources-->
+    <string name="splash_text">Your finances pocket guardian</string>
+    <string name="splash_icon_licence">Icons made by Freepik from Flaticon (www.flaticon.com) is licensed by CC 3.0 BY</string>
+
+    <!-- Main activity string resources -->
+    <string name="totalBalanceLabel">Total Balance</string>
+
+
+    <!-- Operation dialog string resources -->
+    <string name="operation_add_balance_title">Add Balance</string>
+    <string name="operation_add_balance_description">Add balance to a finance node.</string>
+    <string name="operation_subtract_balance_title">Subtract Balance</string>
+    <string name="operation_subtract_balance_description">Subtract balance from a finance node.</string>
+    <string name="operation_move_balance_to_title">Move Balance</string>
+    <string name="operation_move_balance_to_description">Move balance to another finance node.</string>
 
     <!-- Operation activity string resources -->
     <string name="title_activity_operation">OperationActivity</string>
