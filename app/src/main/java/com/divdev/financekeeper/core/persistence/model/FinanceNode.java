@@ -1,12 +1,6 @@
 package com.divdev.financekeeper.core.persistence.model;
 
-import android.content.Context;
-
-import com.divdev.financekeeper.core.persistence.PersistenceSystem;
-import com.divdev.financekeeper.core.persistence.sqlite.sqlitedao.FinanceNodeSqliteDao;
-
 import java.math.BigDecimal;
-import java.util.List;
 
 /**
  * Node representing a segmented balance. May have a number of child Finance Nodes.
@@ -19,6 +13,11 @@ public class FinanceNode {
      * Length of each token of the complete code of a node.
      */
     public static final short NODE_COMPLETE_CODE_TOKEN_LENGHT = 3;
+
+    /**
+     * Id for the parent node of the main nodes (nodes without a parent).
+     */
+    public static final short MAIN_PARENT_NODE_ID = 0;
 
     /**
      * Finance Node code.
@@ -49,7 +48,7 @@ public class FinanceNode {
     /**
      * Id of the parent of this FinanceNode. May be null for absolute parents.
      */
-    private Short parent_id;
+    private short parent_id;
 
     /**
      * Balance of the node.
@@ -97,11 +96,11 @@ public class FinanceNode {
         this.parent = parent;
     }
 
-    public Short getParent_Id() {
+    public short getParent_Id() {
         return parent_id;
     }
 
-    public void setParent_Id(Short parentId) {
+    public void setParent_Id(short parentId) {
         this.parent_id = parentId;
     }
 

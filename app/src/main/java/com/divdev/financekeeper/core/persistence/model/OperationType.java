@@ -24,12 +24,12 @@ public enum OperationType {
     /**
      * Moved balance to another Finance Node.
      */
-    MOVED_BALANCE_TO,
+    MOVE_BALANCE_TO,
 
     /**
      * Moved balance from another Finance Node.
      */
-    MOVED_BALANCE_FROM;
+    MOVE_BALANCE_FROM;
 
     /**
      * Returns the localized description for the operation type.
@@ -45,10 +45,10 @@ public enum OperationType {
             case SUBTRACT_BALANCE:
                 description = context.getResources().getString(R.string.operation_type_subtract_balance);
                 break;
-            case MOVED_BALANCE_TO:
+            case MOVE_BALANCE_TO:
                 description = context.getResources().getString(R.string.operation_type_moved_balance_to);
                 break;
-            case MOVED_BALANCE_FROM:
+            case MOVE_BALANCE_FROM:
                 description = context.getResources().getString(R.string.operation_type_moved_balance_from);
                 break;
         }
